@@ -24,9 +24,8 @@ const useStyles = makeStyles({
 });
 
 export default function Cards({ each, index, handelDelate }) {
-    // here i mention(catch) those props which i send from App.js component.
+    
     const classes = useStyles();
-    //you can't use useStyles function in jsx so we have to store that into a variable.
     return (
         <Card className={classes.root}>
             <Box className={classes.container}>
@@ -41,7 +40,7 @@ export default function Cards({ each, index, handelDelate }) {
                     color="primary"
                     aria-label="upload picture"
                     component="span"
-                    onClick={() => handelDelate(index)} //as i told you onClick is a javascript event, Here i send index cuz it's a unique value. 
+                    onClick={() => handelDelate(index)}  
                 >
                     <DeleteIcon />
                 </IconButton>
@@ -50,7 +49,6 @@ export default function Cards({ each, index, handelDelate }) {
                 <Avatar alt={each.name} src="" />
                 <Box fontSize={16} fontWeight={600}>
                     {each.name}
-                    {/* here i bind that array element */}
                 </Box>
             </Box>
         </Card>
